@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Open Sans", "Noto Sans", HelveticaNeueCyr, Helvetica, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.accordion{
+    width: 768px;
+    height: auto;
+    overflow: hidden;
+}
+
+.accordion .accordion-item-header{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 20px;
+    border-bottom: 1px solid #cecece;
+    position: relative;
+    color: #666666;
+    font-weight: bold;
+}
+
+.accordion .accordion-item-header:after {
+    content: "•";
+    position: absolute;
+    right: 0;
+    display: none;
+    font-size: 14pt;
+}
+
+.accordion .accordion-item-header .accordion-item-active-marker {
+    margin-left: auto;
+}
+
+.accordion .accordion-text {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 300ms ease-in-out;
+}
+
+.accordion .accordion-text p {
+    padding: 20px;
+    line-height: 1.68em;
+}
+
+.accordion-item:target .accordion-text{
+    max-height: 300px;
+}
+
+.accordion-item:target .accordion-item-header:after {
+    display: block;
+}
